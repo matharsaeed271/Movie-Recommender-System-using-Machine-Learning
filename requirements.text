@@ -1,8 +1,0 @@
-pickle
-feature_extraction
-sklearn
-scikitlearn
-streamlit==1.25.0
-pandas==2.1.0
-scikit-learn==1.3.2
-requests==2.32.0
