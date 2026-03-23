@@ -6,20 +6,26 @@ import requests
 ##################################
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-similarity = cosine_similarity(vectors)
+
 # load movies
 # movies = pickle.load(open('movies.pkl', 'rb'))
+# movies = pd.DataFrame(movies_dict)
+
+movies_dict = pickle.load(open('movies_dict.pkl', 'rb'))
+movies = pd.DataFrame(movies_dict)
 
 # vectorization
 cv = CountVectorizer(max_features=5000, stop_words='english')
 vectors = cv.fit_transform(movies['tags']).toarray()
+
+similarity = cosine_similarity(vectors)
 
 # 🔥 yeh line ADD karo (yeh hi solution hai)
 @st.cache_resource
 def get_similarity(vectors):
     return cosine_similarity(vectors)
 
-similarity = get_similarity(vectors)
+# similarity = get_similarity(vectors)
 ##################################
 
 def fetch_poster(movie_id):
