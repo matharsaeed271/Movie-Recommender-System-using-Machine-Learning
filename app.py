@@ -6,9 +6,9 @@ import requests
 ##################################
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-
+similarity = cosine_similarity(vectors)
 # load movies
-movies = pickle.load(open('movies.pkl', 'rb'))
+# movies = pickle.load(open('movies.pkl', 'rb'))
 
 # vectorization
 cv = CountVectorizer(max_features=5000, stop_words='english')
