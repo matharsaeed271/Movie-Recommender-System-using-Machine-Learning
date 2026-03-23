@@ -1,8 +1,4 @@
 streamlit
-pickle
 pandas
 requests
 scikit-learn
-feature_extraction
-sklearn
-scikitlearn
