@@ -2,6 +2,11 @@ import streamlit as st
 import pickle
 import pandas as pd
 import requests
+
+import subprocess
+import sys
+
+subprocess.check_call([sys.executable, "-m", "pip", "install", "scikit-learn"])
 ##################################
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
