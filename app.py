@@ -2,7 +2,12 @@ import streamlit as st
 import pickle
 import pandas as pd
 import requests
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
+
+api_key = os.getenv("GROQ_API_KEY")
 ##################################
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
