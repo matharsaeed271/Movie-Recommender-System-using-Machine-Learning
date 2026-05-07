@@ -5,6 +5,88 @@ import requests
 from dotenv import load_dotenv
 import os
 
+#-----------------------------------------------------
+st.set_page_config(
+    page_title="AI Movie Recommender",
+    page_icon="🎬",
+    layout="wide"
+)
+
+st.markdown("""
+<style>
+
+/* Center content with controlled width */
+.block-container {
+    max-width: 1200px;   /* 🔥 KEY FIX */
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    margin: auto;
+}
+
+
+/* Background */
+body {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+}
+
+/* Title */
+.big-title {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    background: linear-gradient(90deg, #38bdf8, #6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Subtitle */
+.sub-text {
+    text-align: center;
+    color: #94a3b8;
+    margin-bottom: 30px;
+}
+
+/* Card */
+.movie-card {
+    background: #1e293b;
+    padding: 12px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+/* Hover effect */
+.movie-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Button */
+.stButton>button {
+    background: linear-gradient(90deg, #6366f1, #38bdf8);
+    color: white;
+    border-radius: 10px;
+    height: 50px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+}
+
+/* Selectbox */
+.stSelectbox div[data-baseweb="select"] {
+    background-color: #1e293b;
+    border-radius: 10px;
+}
+
+/* Image styling */
+img {
+    border-radius: 10px;
+}
+
+</style>
+""", unsafe_allow_html=True)
+#-----------------------------------------------------
 load_dotenv()
 
 api_key = os.getenv("GROQ_API_KEY")
